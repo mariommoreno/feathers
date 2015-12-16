@@ -204,6 +204,12 @@ package feathers.controls.supportClasses
 		private var _defaultStorage:ItemRendererFactoryStorage = new ItemRendererFactoryStorage();
 		private var _storageMap:Object;
 		private var _rendererMap:Dictionary = new Dictionary(true);
+		
+		public function get rendererMap():Dictionary
+		{
+			return this._rendererMap;
+		}
+		
 		private var _minimumItemCount:int;
 
 		private var _layoutIndexOffset:int = 0;
