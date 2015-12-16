@@ -222,6 +222,14 @@ package feathers.core
 		}
 		
 		/**
+		 * Number of elements (pop-ups and overlays) managed by the PopUpManager
+		 */
+		public static function getNumPopUps():uint
+		{
+			return PopUpManager.forStarling(Starling.current).getNumPopUps();
+		}
+		
+		/**
 		 * Centers a pop-up on the stage. Unlike the <code>isCentered</code>
 		 * argument passed to <code>PopUpManager.addPopUp()</code>, the pop-up
 		 * will only be positioned once. If the stage or the pop-up resizes,

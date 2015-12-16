@@ -237,6 +237,15 @@ package feathers.core
 			//pop-up was not found at all, so obviously, not top-level
 			return false;
 		}
+		
+		/**
+		 *  @copy PopUpManager#getNumPopUps()
+		 */
+		public function getNumPopUps():uint
+		{
+			return this._popUps.length;
+		}
+
 
 		/**
 		 * @copy PopUpManager#centerPopUp()

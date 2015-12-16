@@ -58,6 +58,11 @@ package feathers.core
 		function isTopLevelPopUp(popUp:DisplayObject):Boolean;
 
 		/**
+		 * @copy PopUpManager#getNumPopUps()
+		 */
+		function getNumPopUps():uint;
+
+		/**
 		 * @copy PopUpManager#centerPopUp()
 		 */
 		function centerPopUp(popUp:DisplayObject):void;
