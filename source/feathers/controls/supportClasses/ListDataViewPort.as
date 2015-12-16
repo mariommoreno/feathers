@@ -696,6 +696,10 @@ package feathers.controls.supportClasses
 
 			//final validation to avoid juggler next frame issues
 			this.validateItemRenderers();
+			
+			if(basicsInvalid){
+				this._owner.dispatchEventWith(FeathersEventType.ALL_RENDERERS_ADDED, false);
+			}
 		}
 
 		private function invalidateParent(flag:String = INVALIDATION_FLAG_ALL):void

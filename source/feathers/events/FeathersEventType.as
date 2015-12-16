@@ -186,6 +186,15 @@ package feathers.events
 		public static const RENDERER_REMOVE:String = "rendererRemove";
 
 		/**
+		 * The <code>FeathersEventType.ALL_RENDERERS_ADDED</code> event type is used
+		 * by ListDataViewPort to indicate when all renderers are added.
+		 * This event type is meant to be used with virtualized
+		 * layouts where only a limited set of renderers will be created for
+		 * a data provider that may include a larger number items.
+		 */
+		public static const ALL_RENDERERS_ADDED:String = "allRenderersAdded";
+		
+		/**
 		 * The <code>FeathersEventType.ERROR</code> event type is used by
 		 * Feathers controls when an error occurs that can be caught and
 		 * safely ignored.
