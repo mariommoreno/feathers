@@ -309,7 +309,7 @@ package feathers.controls
 		 * @private
 		 * The guts of the List's functionality. Handles layout and selection.
 		 */
-		protected var dataViewPort:ListDataViewPort;
+		protected var _dataViewPort:ListDataViewPort;
 
 		/**
 		 * @private
@@ -1171,6 +1171,11 @@ package feathers.controls
 			}
 			return this._itemRendererProperties;
 		}
+		
+		public function get dataViewPort():ListDataViewPort 
+		{
+			return _dataViewPort;
+		}
 
 		/**
 		 * @private
@@ -1373,7 +1378,7 @@ package feathers.controls
 			
 			if(!this.dataViewPort)
 			{
-				this.viewPort = this.dataViewPort = new ListDataViewPort();
+				this.viewPort = this._dataViewPort = new ListDataViewPort();
 				this.dataViewPort.owner = this;
 				this.viewPort = this.dataViewPort;
 			}
