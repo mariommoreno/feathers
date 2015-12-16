@@ -307,6 +307,7 @@ package feathers.controls
 		 * <listing version="3.0">
 		 * callout.closeOnTouchBeganOutside = true;
 		 * callout.closeOnTouchEndedOutside = true;
+		 * callout.closeOnTouchOrigin = false;
 		 * callout.closeOnKeys = new &lt;uint&gt;[Keyboard.BACK, Keyboard.ESCAPE];</listing>
 		 *
 		 * @see #show()
@@ -396,6 +397,7 @@ package feathers.controls
 			var callout:Callout = new Callout();
 			callout.closeOnTouchBeganOutside = true;
 			callout.closeOnTouchEndedOutside = true;
+			callout.closeOnTouchOrigin = false;
 			callout.closeOnKeys = new <uint>[Keyboard.BACK, Keyboard.ESCAPE];
 			return callout;
 		}
@@ -684,6 +686,11 @@ package feathers.controls
 		 * @see #closeOnTouchEndedOutside
 		 */
 		public var closeOnKeys:Vector.<uint>;
+
+		/**
+		 * The callout can be closed also if origin is touched
+		 */
+		public var closeOnTouchOrigin:Boolean = false;
 
 		/**
 		 * Determines if the callout will be disposed when <code>close()</code>
@@ -2085,7 +2092,7 @@ package feathers.controls
 				return;
 			}
 
-			if(this._origin == target || (this._origin is DisplayObjectContainer && DisplayObjectContainer(this._origin).contains(target)))
+			if(!this.closeOnTouchOrigin && (this._origin == target || (this._origin is DisplayObjectContainer && DisplayObjectContainer(this._origin).contains(target))))
 			{
 				return;
 			}
